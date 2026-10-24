@@ -216,13 +216,21 @@ if "2023-04-03" in df.index.strftime("%Y-%m-%d"):
 # Dax measures used
 
 Total Discharged kWh = SUM(kpi_daily_energy[discharged_kwh])
+
 Total Charged kWh = SUM(kpi_daily_energy[charged_kwh])
+
 Efficiency Ratio = DIVIDE([Total Discharged kWh], [Total Charged kWh])
+
 Avg SOC % = AVERAGE(kpi_daily_energy[avg_soc])
+
 Avg Quality Score = AVERAGE(kpi_quality[quality_score])
+
 Outage Count = COUNTROWS(quality_events)
+
 Outage Minutes = SUM(quality_events[duration_min])
+
 FCR Relative Error % = AVERAGE(kpi_fcr_tracking[relative_error])
+
 Share Outside Band % = AVERAGE(kpi_frequency[share_outside_band])
 
 

@@ -1,6 +1,5 @@
 # BESS-Battery-analytics
 
-# BESS Data Quality & Performance Analysis
 
 # About the Project
 This project focuses on analyzing Battery Energy Storage System (BESS) data using Python and Power BI. I used Python to clean the data, check for errors, and identify unusual readings. I then created Power BI dashboards to visualize battery performance and data quality.
@@ -114,7 +113,7 @@ print("Gaps (step > 1 s):", (steps > pd.Timedelta("1s")).sum())
 df["Grid_frequency_hz"] = df["Grid_frequency"] / 1000   # mHz -> Hz
 
 df["Temperature_c"] = df["Temperature"] / 10            
-# --- 3. Row-level quality flags -------------------------------------------
+# 3. Row-level quality flags 
 flags = pd.DataFrame(index=df.index)
 
 flags["freq_dropout"] = df["Grid_frequency"] == 0                       
